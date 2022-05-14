@@ -141,6 +141,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="baseComponent.cpp" />
+    <ClCompile Include="baseGameObject.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="noteComponent.cpp" />
+    <ClCompile Include="overallGame.cpp" />
+    <ClCompile Include="spriteComponent.cpp" />
+    <ClCompile Include="transformComponent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="baseComponent.h" />
+    <ClInclude Include="baseGameObject.h" />
+    <ClInclude Include="noteComponent.h" />
+    <ClInclude Include="overallGame.h" />
+    <ClInclude Include="spriteComponent.h" />
+    <ClInclude Include="transformComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

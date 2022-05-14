@@ -13,5 +13,54 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\Component">
+      <UniqueIdentifier>{dab85db3-80e4-41b2-b93e-f19b9f6de15f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Component">
+      <UniqueIdentifier>{e212e703-6f2e-4b24-8e57-f2d00788a792}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="baseComponent.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="baseGameObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="overallGame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="noteComponent.cpp">
+      <Filter>源文件\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="spriteComponent.cpp">
+      <Filter>源文件\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="transformComponent.cpp">
+      <Filter>源文件\Component</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="baseComponent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="baseGameObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="overallGame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="noteComponent.h">
+      <Filter>头文件\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="spriteComponent.h">
+      <Filter>头文件\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="transformComponent.h">
+      <Filter>头文件\Component</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{2EEB6D47-A696-4925-B149-ED4F398069E0}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		devOutline.md = devOutline.md
 	EndProjectSection
 EndProject
 Global
