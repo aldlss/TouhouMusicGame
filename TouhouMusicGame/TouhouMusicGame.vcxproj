@@ -108,7 +108,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
@@ -126,7 +126,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
@@ -143,18 +143,37 @@
   <ItemGroup>
     <ClCompile Include="baseComponent.cpp" />
     <ClCompile Include="baseGameObject.cpp" />
+    <ClCompile Include="gameSetting.cpp" />
+    <ClCompile Include="trackComponent.cpp" />
+    <ClCompile Include="trackObject.cpp" />
+    <ClCompile Include="transformChangeComponent.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="musicalNote.cpp" />
     <ClCompile Include="noteComponent.cpp" />
-    <ClCompile Include="overallGame.cpp" />
+    <ClCompile Include="baseLever.cpp" />
+    <ClCompile Include="roundLevel.cpp" />
+    <ClCompile Include="someTools.cpp" />
     <ClCompile Include="spriteComponent.cpp" />
+    <ClCompile Include="theGame.cpp" />
+    <ClCompile Include="timer.cpp" />
     <ClCompile Include="transformComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="baseComponent.h" />
     <ClInclude Include="baseGameObject.h" />
+    <ClInclude Include="gameSetting.h" />
+    <ClInclude Include="trackComponent.h" />
+    <ClInclude Include="trackObject.h" />
+    <ClInclude Include="transformChangeComponent.h" />
+    <ClInclude Include="Levers.h" />
+    <ClInclude Include="musicalNote.h" />
     <ClInclude Include="noteComponent.h" />
-    <ClInclude Include="overallGame.h" />
+    <ClInclude Include="baseLever.h" />
+    <ClInclude Include="roundLever.h" />
+    <ClInclude Include="someTools.h" />
     <ClInclude Include="spriteComponent.h" />
+    <ClInclude Include="theGame.h" />
+    <ClInclude Include="timer.h" />
     <ClInclude Include="transformComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

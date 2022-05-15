@@ -9,28 +9,27 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="资源文件">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="头文件\Component">
       <UniqueIdentifier>{dab85db3-80e4-41b2-b93e-f19b9f6de15f}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\Component">
       <UniqueIdentifier>{e212e703-6f2e-4b24-8e57-f2d00788a792}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Lever">
+      <UniqueIdentifier>{3cd3d858-8b84-4d2e-a074-78818f53f763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Lever">
+      <UniqueIdentifier>{283e59ac-43f1-4ea6-8773-b7f681b611e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Object">
+      <UniqueIdentifier>{e12ad3b2-51be-4155-8fa0-7eaeb0051bfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Object">
+      <UniqueIdentifier>{e5b47b68-b2ea-41d7-a94c-dd6dd3fe4beb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="baseComponent.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="baseGameObject.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="overallGame.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="noteComponent.cpp">
@@ -42,17 +41,44 @@
     <ClCompile Include="transformComponent.cpp">
       <Filter>源文件\Component</Filter>
     </ClCompile>
+    <ClCompile Include="someTools.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="theGame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="baseComponent.cpp">
+      <Filter>源文件\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="baseLever.cpp">
+      <Filter>源文件\Lever</Filter>
+    </ClCompile>
+    <ClCompile Include="roundLevel.cpp">
+      <Filter>源文件\Lever</Filter>
+    </ClCompile>
+    <ClCompile Include="transformChangeComponent.cpp">
+      <Filter>源文件\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gameSetting.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="trackComponent.cpp">
+      <Filter>源文件\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="musicalNote.cpp">
+      <Filter>源文件\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="baseGameObject.cpp">
+      <Filter>源文件\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="trackObject.cpp">
+      <Filter>源文件\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="baseComponent.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="baseGameObject.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="overallGame.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="noteComponent.h">
       <Filter>头文件\Component</Filter>
     </ClInclude>
@@ -61,6 +87,45 @@
     </ClInclude>
     <ClInclude Include="transformComponent.h">
       <Filter>头文件\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="someTools.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="theGame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="baseComponent.h">
+      <Filter>头文件\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="baseLever.h">
+      <Filter>头文件\Lever</Filter>
+    </ClInclude>
+    <ClInclude Include="roundLever.h">
+      <Filter>头文件\Lever</Filter>
+    </ClInclude>
+    <ClInclude Include="Levers.h">
+      <Filter>头文件\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="transformChangeComponent.h">
+      <Filter>头文件\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gameSetting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="trackComponent.h">
+      <Filter>头文件\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="baseGameObject.h">
+      <Filter>头文件\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="musicalNote.h">
+      <Filter>头文件\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="trackObject.h">
+      <Filter>头文件\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

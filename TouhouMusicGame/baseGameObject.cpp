@@ -1,15 +1,24 @@
 ﻿#include "baseGameObject.h"
+#include "baseLever.h"
 
-baseGameObject::baseGameObject(overallGame* nowGame)
+void baseGameObject::processInput(const Uint8* keyState)
 {
-	nowGame->createGameObject(this);
+	for (auto component : ownComponent)
+		component->processInput(keyState);
+}
+
+
+baseGameObject::baseGameObject(baseLever* nowLever)
+	:nowLever(nowLever), nowState(Alive)
+{
+	nowLever->createGameObject(this);
 }
 
 baseGameObject::~baseGameObject()
 {
 	while (!ownComponent.empty())
 		delete ownComponent.back();
-	nowGame->deleteGameObject(this);
+	nowLever->deleteGameObject(this);
 }
 
 
@@ -22,8 +31,8 @@ void baseGameObject::update()
 void baseGameObject::addComponent(baseComponent* willBeAddedComponent)
 {
 	auto pos = ownComponent.begin();
-	int thisComponent = willBeAddedComponent->getPriority();
-	while (pos != ownComponent.end() && (*pos)->getPriority() < thisComponent)
+	int thisComponentPriority = willBeAddedComponent->getPriority();
+	while (pos != ownComponent.end() && (*pos)->getPriority() < thisComponentPriority)
 		++pos;
 	ownComponent.insert(pos, willBeAddedComponent);
 }

@@ -11,6 +11,11 @@ void baseComponent::update()
 
 }
 
+void baseComponent::processInput(const Uint8* keyState)
+{
+
+}
+
 
 baseComponent::~baseComponent()
 {
