@@ -3,7 +3,7 @@
 #include "timer.h"
 
 baseLever::baseLever(SDL_Renderer* renderer, SDL_Window* window)
-	:allSprite(), allGameObject(), renderer(renderer), window(window), Textures(), tolever(theGame::Quit), isRunning(true), pendingObjects(), isUpdate(false)
+	:allSprite(), allGameObject(), renderer(renderer), window(window), Textures(), toLever(theGame::Quit), isRunning(true), pendingObjects(), isUpdate(false)
 {
 
 }
@@ -73,10 +73,17 @@ void baseLever::event()
 		{
 		case SDL_QUIT:
 			isRunning = false;
-			tolever = theGame::Quit;
+			toLever = theGame::Quit;
+			break;
+		default:
 			break;
 		}
 	}
+	auto keyState = SDL_GetKeyboardState(nullptr);
+	for (auto gameObject : allGameObject)
+		if (gameObject->getState() == gameObject->Alive)
+			gameObject->processInput(keyState);
+
 }
 
 void baseLever::render()
@@ -129,5 +136,5 @@ theGame::levers baseLever::running()
 		update();
 		render();
 	}
-	return tolever;
+	return toLever;
 }

@@ -48,11 +48,10 @@ void theGame::Loop()
 {
 	levers toLever = PristineBeat;
 	fileReader.open(R"(F:\code\work\TouhouMusicGame\resources\musicNotationFile\PristineBeat.txt)", std::ios::in);
-	roundLevel* lever = new roundLevel(renderer, window, fileReader);
-	toLever = lever->running();
+	baseLever* lever = new roundLevel(renderer, window, fileReader);
 	while (isRunning)
 	{
-		switch (toLever)
+		switch (lever->running())
 		{
 		case Quit:
 			isRunning = false;
@@ -60,6 +59,8 @@ void theGame::Loop()
 			break;
 		case PristineBeat:
 			delete lever;
+			lever = new roundLevel(renderer, window, fileReader);
+			break;
 		}
 	}
 	fileReader.close();

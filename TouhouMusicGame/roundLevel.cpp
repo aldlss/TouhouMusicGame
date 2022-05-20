@@ -26,25 +26,3 @@ roundLevel::roundLevel(SDL_Renderer* renderer, SDL_Window* window, std::ifstream
 	trackObjects.emplace_back(a);
 	timer::musicStartTime = SDL_GetTicks();
 }
-
-void roundLevel::event()
-{
-	SDL_Event event;
-	while (SDL_PollEvent(&event))
-	{
-		switch (event.type)
-		{
-		case SDL_QUIT:
-			isRunning = false;
-			tolever = theGame::Quit;
-			break;
-		default:
-			break;
-		}
-	}
-	auto keyState = SDL_GetKeyboardState(nullptr);
-	for (auto gameObject : allGameObject)
-		if (gameObject->getState() == gameObject->Alive)
-			gameObject->processInput(keyState);
-}
-

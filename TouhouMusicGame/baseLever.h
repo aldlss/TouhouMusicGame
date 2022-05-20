@@ -12,7 +12,7 @@ protected:
 	SDL_Renderer* renderer;
 	SDL_Window* window;
 	std::unordered_map<std::string, SDL_Texture* >Textures;
-	theGame::levers tolever;
+	theGame::levers toLever;
 	bool isRunning;
 	bool isUpdate;
 public:
@@ -24,7 +24,7 @@ public:
 	bool removeSprite(spriteComponent* willBeRemovedComponent);
 
 	theGame::levers running();
-	virtual void event();//默认是全部处理，但我认为有些是不用处理的，索性继承了
+	void event();
 	void update();
 	void render();
 	SDL_Texture* getTexture(const std::string& name);
