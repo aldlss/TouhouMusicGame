@@ -13,7 +13,7 @@ void trackComponent::update()
 	while (!waitingTrack.empty())
 	{
 		auto& nodeInfo = waitingTrack.front();
-		if (nodeInfo.beatTime - timer::noteFallsTime + timer::musicStartTime <= timer::relativePassTime)
+		if (nodeInfo.beatTime - timer::noteFallsTime <= timer::relativePassTime)
 		{
 			auto node = musicalNote::createRoundNoteSimple(this->owner->getGame(), nodeInfo.beatTime, nodeInfo.endTime, nodeInfo.category);
 			node->getComponent<noteComponent>()->belongTrack = &playingTrack;
@@ -26,9 +26,7 @@ void trackComponent::update()
 	{
 		auto node = playingTrack.front();
 		auto nodeCom = node->getComponent<noteComponent>();
-		if (nodeCom->beatTime + timer::musicStartTime <= timer::relativePassTime)
-			int a = 1;
-		if (timer::relativePassTime > nodeCom->beatTime + gameSetting::missSlower)
+		if (timer::relativePassTime > nodeCom->beatTime + gameSetting::badSlower)
 		{
 			node->setState(node->Dead);
 			nodeCom->nowNoteState = nodeCom->Miss;

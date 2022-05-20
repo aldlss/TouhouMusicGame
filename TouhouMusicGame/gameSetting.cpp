@@ -6,13 +6,13 @@ int gameSetting::height = 720;
 int gameSetting::standardX = width / 2;
 int gameSetting::standardY = height / 2;
 
-int gameSetting::missSlower = 4000;
-int gameSetting::badSlower = 2600;
-int gameSetting::goodSlower = 1600;
-int gameSetting::perfectSlower = 800;
-int gameSetting::perfectFaster = -500;
-int gameSetting::goodFaster = -1100;
-int gameSetting::badFaster = -2000;
+// int gameSetting::missSlower = 4000;
+int gameSetting::badSlower = 125;
+int gameSetting::goodSlower = 90;
+int gameSetting::perfectSlower = 50;
+int gameSetting::perfectFaster = -50;
+int gameSetting::goodFaster = -90;
+int gameSetting::badFaster = -125;
 
 double gameSetting::originalScaleX = 1.0;
 double gameSetting::originalScaleY = 1.0;

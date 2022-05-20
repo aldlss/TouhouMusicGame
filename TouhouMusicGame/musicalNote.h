@@ -25,7 +25,7 @@ public:
 	{
 		int track;
 		noteComponent::category category;
-		Uint32 [[deprecated("No use")]] startTime;
+		[[deprecated("No use")]] Uint32 startTime;
 		Uint32 beatTime, endTime;
 	};
 	static void readMusicNotationFileSimple(std::ifstream& file, std::vector<std::queue<NodeInfo>>& tracks);

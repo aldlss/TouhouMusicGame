@@ -32,5 +32,6 @@ public:
 	static double getOriginalScaleX() { return originalScaleX; }
 	static double getOriginalScaleY() { return originalScaleY; }
 	//指相对正中击打的时间是快了还是慢了
-	static int missSlower, badSlower, badFaster, goodSlower, goodFaster, perfectSlower, perfectFaster;
+	static int badSlower, badFaster, goodSlower, goodFaster, perfectSlower, perfectFaster;
+	// static int missSlower;这个好像不是很需要
 };
