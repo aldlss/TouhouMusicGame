@@ -2,12 +2,12 @@
 #include "gameSetting.h"
 #include "baseLever.h"
 
-trackObject::trackObject(baseLever* nowLever, std::queue<musicalNote::NodeInfo>&& waitingTrack, double x, double y, double z, SDL_Texture* texture, int drawOrde)
+trackObject::trackObject(baseLever* nowLever, std::queue<musicalNote::NodeInfo>&& waitingTrack, double x, double y, double z, SDL_Texture* texture, int drawOrder)
 	:baseGameObject(nowLever)
 {
 	track = new trackComponent(this, std::move(waitingTrack));
 	transform = new transformComponent(this, x, y, z);
-	sprite = new spriteComponent(this, texture, drawOrde);
+	sprite = new spriteComponent(this, texture, drawOrder);
 }
 
 trackObject* trackObject::createCrackObjectSimple(baseLever* nowLever, std::queue<musicalNote::NodeInfo>&& waitingTrack)

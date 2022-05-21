@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -143,7 +143,10 @@
   <ItemGroup>
     <ClCompile Include="baseComponent.cpp" />
     <ClCompile Include="baseGameObject.cpp" />
+    <ClCompile Include="fontComponent.cpp" />
     <ClCompile Include="gameSetting.cpp" />
+    <ClCompile Include="gameState.cpp" />
+    <ClCompile Include="textObject.cpp" />
     <ClCompile Include="trackComponent.cpp" />
     <ClCompile Include="trackObject.cpp" />
     <ClCompile Include="transformChangeComponent.cpp" />
@@ -161,7 +164,10 @@
   <ItemGroup>
     <ClInclude Include="baseComponent.h" />
     <ClInclude Include="baseGameObject.h" />
+    <ClInclude Include="fontComponent.h" />
     <ClInclude Include="gameSetting.h" />
+    <ClInclude Include="gameState.h" />
+    <ClInclude Include="textObject.h" />
     <ClInclude Include="trackComponent.h" />
     <ClInclude Include="trackObject.h" />
     <ClInclude Include="transformChangeComponent.h" />

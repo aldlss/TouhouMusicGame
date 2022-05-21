@@ -20,3 +20,16 @@ double gameSetting::targetScaleY = 3.0;
 double gameSetting::targetScaleX = 3.0;
 double gameSetting::decreaseScaleSpeedX = 1;
 double gameSetting::decreaseScaleSpeedY = 1;
+
+SDL_Color gameSetting::missColor{ 162,190,180,240 };
+SDL_Color gameSetting::badColor{ 143,22,22,240 };
+SDL_Color gameSetting::greatColor{ 240,200,50,240 };
+SDL_Color gameSetting::perfectColor{ 255,255,0,240 };
+SDL_Color gameSetting::comboColor{ 244,234,25,240 };
+
+
+std::string gameSetting::missStr{ "MISS" };
+std::string gameSetting::badStr{ "BAD" };
+std::string gameSetting::greatStr{ "GREAT!" };
+std::string gameSetting::perfectStr{ "PERFECT!!" };
+std::string gameSetting::comboStr{ "Combo" };

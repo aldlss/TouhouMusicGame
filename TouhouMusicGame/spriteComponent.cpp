@@ -14,7 +14,7 @@ spriteComponent::~spriteComponent()
 	owner->getGame()->removeSprite(this);
 }
 
-inline void spriteComponent::setTexture(SDL_Texture* textureInput)
+void spriteComponent::setTexture(SDL_Texture* textureInput)//这里加inline会报错，我猜是他子类font在另一个函数调用了它的原因
 {
 	texture = textureInput;
 	SDL_QueryTexture(texture, nullptr, nullptr, &textureWidth, &textureHeight);

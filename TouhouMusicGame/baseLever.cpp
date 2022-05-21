@@ -102,6 +102,14 @@ SDL_Texture* baseLever::getTexture(const std::string& name)
 	return pos->second;
 }
 
+textObject* baseLever::getTextObject(const std::string& name)
+{
+	const auto pos = Texts.find(name);
+	if (pos == Texts.end())return nullptr;
+	return pos->second;
+}
+
+
 void baseLever::update()
 {
 	timer::ticks(60);

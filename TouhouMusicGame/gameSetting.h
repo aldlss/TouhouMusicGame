@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "SDL2/SDL.h"
 #include "timer.h"
+#include "string"
 class gameSetting
 {
 private:
@@ -34,4 +35,16 @@ public:
 	//指相对正中击打的时间是快了还是慢了
 	static int badSlower, badFaster, goodSlower, goodFaster, perfectSlower, perfectFaster;
 	// static int missSlower;这个好像不是很需要
+
+	static SDL_Color missColor;
+	static SDL_Color badColor;
+	static SDL_Color greatColor;
+	static SDL_Color perfectColor;
+	static SDL_Color comboColor;
+
+	static std::string missStr;
+	static std::string badStr;
+	static std::string greatStr;
+	static std::string perfectStr;
+	static std::string comboStr;
 };

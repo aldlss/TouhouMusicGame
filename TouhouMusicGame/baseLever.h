@@ -2,6 +2,7 @@
 #include "baseGameObject.h"
 #include "spriteComponent.h"
 #include "theGame.h"
+#include "textObject.h"
 #include <vector>
 class baseLever
 {
@@ -11,7 +12,8 @@ protected:
 	std::vector<baseGameObject*>pendingObjects;
 	SDL_Renderer* renderer;
 	SDL_Window* window;
-	std::unordered_map<std::string, SDL_Texture* >Textures;
+	std::unordered_map<std::string, SDL_Texture*>Textures;
+	std::unordered_map<std::string, textObject*>Texts;
 	theGame::levers toLever;
 	bool isRunning;
 	bool isUpdate;
@@ -28,4 +30,5 @@ public:
 	void update();
 	void render();
 	SDL_Texture* getTexture(const std::string& name);
+	textObject* getTextObject(const std::string& name);
 };
