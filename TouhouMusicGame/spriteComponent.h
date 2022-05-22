@@ -7,7 +7,7 @@ class spriteComponent :
 {
 public:
 	spriteComponent(baseGameObject* ownerInput, SDL_Texture* texture = nullptr, int drawOrder = 50, int priorityInput = 100);
-	~spriteComponent();
+	~spriteComponent()override;
 	int getDrawOrder()const { return drawOrder; }
 	virtual void draw(SDL_Renderer* renderer);
 	void setTexture(SDL_Texture* textureInput);

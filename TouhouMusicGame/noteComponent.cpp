@@ -11,7 +11,7 @@ noteComponent::noteComponent(baseGameObject* ownerInput, int track, SDL_Scancode
 
 noteComponent::~noteComponent()
 {
-	auto font = owner->getGame()->getTextObject("judgeText")->getComponent<fontComponent>();
+	auto font = owner->getGame()->getGlobalObject("judgeText")->getComponent<fontComponent>();
 	switch (nowNoteState)
 	{
 	case Miss:
@@ -38,7 +38,7 @@ noteComponent::~noteComponent()
 		puts("WHAT THE?");
 		break;
 	}
-	font = owner->getGame()->getTextObject("comboText")->getComponent<fontComponent>();
+	font = owner->getGame()->getGlobalObject("comboText")->getComponent<fontComponent>();
 	if (nowNoteState == Miss || nowNoteState == Bad)
 	{
 		font->setString("");

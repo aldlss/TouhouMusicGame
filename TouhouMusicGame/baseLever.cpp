@@ -1,4 +1,7 @@
 ﻿#include "baseLever.h"
+
+#include <ranges>
+
 #include "gameSetting.h"
 #include "timer.h"
 
@@ -12,9 +15,13 @@ baseLever::~baseLever()
 {
 	while (!allGameObject.empty())
 		delete allGameObject.back();
-	for (auto& texture : Textures)
-		SDL_DestroyTexture(texture.second);
+	for (const auto& texture : Textures | std::views::values)
+		SDL_DestroyTexture(texture);
 	Textures.clear();
+	for (const auto& font : Fonts | std::views::values)
+		TTF_CloseFont(font);
+	Fonts.clear();
+	globalObject.clear();
 }
 
 
@@ -102,10 +109,10 @@ SDL_Texture* baseLever::getTexture(const std::string& name)
 	return pos->second;
 }
 
-textObject* baseLever::getTextObject(const std::string& name)
+baseGameObject* baseLever::getGlobalObject(const std::string& name)
 {
-	const auto pos = Texts.find(name);
-	if (pos == Texts.end())return nullptr;
+	const auto pos = globalObject.find(name);
+	if (pos == globalObject.end())return nullptr;
 	return pos->second;
 }
 

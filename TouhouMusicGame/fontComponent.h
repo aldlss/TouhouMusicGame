@@ -11,6 +11,7 @@ protected:
 	SDL_Color color;
 public:
 	fontComponent(baseGameObject* ownerInput, TTF_Font* font, SDL_Texture* texture = nullptr, int drawOrder = 120, int priorityInput = 30);
+	~fontComponent()override;
 	void setString(const std::string& string);
 	void setFont(TTF_Font* fontInput);
 	void serColor(const SDL_Color colorInput);

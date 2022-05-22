@@ -23,11 +23,12 @@ roundLevel::roundLevel(SDL_Renderer* renderer, SDL_Window* window, std::ifstream
 	gameSetting::setOriginalTargetScale(3, 3, 0.5, 0.5);
 	gameState::Initialize();
 	TTF_Font* font = TTF_OpenFont(R"(F:\code\work\TouhouMusicGame\resources\ttf\MerriweatherSans-VariableFont_wght.ttf)", 64);
+	Fonts.emplace("MerriweatherSans", font);
 	TTF_SetFontStyle(font, TTF_STYLE_ITALIC);
 	auto text = new textObject(this, font, nullptr, gameSetting::width >> 1, (gameSetting::height >> 2) * 3, 0, 120);
-	Texts.emplace("judgeText", text);
+	globalObject.emplace("judgeText", text);
 	text = new textObject(this, font, nullptr, (gameSetting::width >> 2) * 3, gameSetting::height / 3, 0, 120);
-	Texts.emplace("comboText", text);
+	globalObject.emplace("comboText", text);
 
 
 	musicalNote::readMusicNotationFileSimple(file, waitingTracks);

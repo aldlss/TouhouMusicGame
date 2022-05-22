@@ -8,6 +8,12 @@ fontComponent::fontComponent(baseGameObject* ownerInput, TTF_Font* font, SDL_Tex
 
 }
 
+fontComponent::~fontComponent()
+{
+	if (texture != nullptr)
+		SDL_DestroyTexture(texture);
+}
+
 void fontComponent::setFont(TTF_Font* fontInput)
 {
 	font = fontInput;
@@ -18,7 +24,7 @@ void fontComponent::setString(const std::string& string)
 	str = string;
 	if (texture != nullptr)
 	{
-		SDL_DestroyTexture(texture);
+		SDL_DestroyTexture(texture);//这里要这样写的原因，是因为这里texture都是自己造的，不像父类一样是别人给的，所以要自己处理
 		texture = nullptr;
 	}
 }
