@@ -35,7 +35,13 @@ public:
 	void setRotationXY(double XY) { rotation[0] = XY; }
 	void setRotationXZ(double XZ) { rotation[1] = XZ; }
 	void setRotationYZ(double YZ) { rotation[2] = YZ; }
-	void increaseDeltaRotation(Eigen::Vector3d delta) { rotation += delta; }
+	void increaseDeltaRotation(Eigen::Vector3d delta)
+	{
+		rotation += delta;
+		for (double& i : rotation)
+			if (i >= 360)
+				i -= 360;
+	}
 	void setRotation(double XY, double XZ, double YZ) { rotation = { XY,XZ,YZ }; }
 	Eigen::Vector3d getRotation() const { return rotation; }
 };

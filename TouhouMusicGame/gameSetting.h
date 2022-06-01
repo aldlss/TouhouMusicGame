@@ -7,7 +7,6 @@ class gameSetting
 private:
 	static double noteSpeed;
 	static double originalScaleX, originalScaleY, targetScaleX, targetScaleY;
-
 	static double decreaseScaleSpeedX, decreaseScaleSpeedY;
 public:
 	static void setNoteSpeed(double noteSpeedInput)
@@ -15,6 +14,7 @@ public:
 		noteSpeed = noteSpeedInput;
 		timer::noteFallsTime = (0.35 + 3.65 * pow((12 - noteSpeed) / 11, 1.31)) * 1000;//*1000因为是以毫秒计时
 	}
+	static double getNoteSpeed() { return noteSpeed; }
 	static void setOriginalTargetScale(double oX, double oY, double tX, double tY)
 	{
 		originalScaleX = oX;
@@ -47,4 +47,6 @@ public:
 	static std::string greatStr;
 	static std::string perfectStr;
 	static std::string comboStr;
+
+	static int musicVolume, chunkVolume;
 };

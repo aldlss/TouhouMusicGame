@@ -36,3 +36,25 @@ std::vector<int> someTools::readNumFromStr(std::string& str)
 	if (read && sum)val.push_back(sum * flag);
 	return val;
 }
+
+const char* someTools::u8ToChar(const char8_t* p)
+{
+	return reinterpret_cast<const char*>(p);
+}
+
+void someTools::imguiTextCentered(std::string text) {
+	auto windowWidth = ImGui::GetWindowSize().x;
+	auto textWidth = ImGui::CalcTextSize(text.c_str()).x;
+
+	ImGui::SetCursorPosX((windowWidth - textWidth) * 0.5f);
+	ImGui::Text(text.c_str());
+}
+
+bool someTools::imguiButtonCentered(std::string label, const ImVec2& size)
+{
+	auto windowWidth = ImGui::GetWindowSize().x;
+	auto textWidth = size.x;
+
+	ImGui::SetCursorPosX((windowWidth - textWidth) * 0.5f);
+	return ImGui::Button(label.c_str(), size);
+}

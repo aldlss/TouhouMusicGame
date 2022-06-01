@@ -110,14 +110,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(Solutiondir)lib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;example_sdl_sdlrenderer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -137,15 +137,19 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;example_sdl_sdlrenderer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="audioComponent.cpp" />
     <ClCompile Include="baseComponent.cpp" />
     <ClCompile Include="baseGameObject.cpp" />
     <ClCompile Include="fontComponent.cpp" />
     <ClCompile Include="gameSetting.cpp" />
     <ClCompile Include="gameState.cpp" />
+    <ClCompile Include="imgObject.cpp" />
+    <ClCompile Include="loadingLever.cpp" />
+    <ClCompile Include="startUI.cpp" />
     <ClCompile Include="textObject.cpp" />
     <ClCompile Include="trackComponent.cpp" />
     <ClCompile Include="trackObject.cpp" />
@@ -162,11 +166,16 @@
     <ClCompile Include="transformComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="audioComponent.h" />
     <ClInclude Include="baseComponent.h" />
     <ClInclude Include="baseGameObject.h" />
     <ClInclude Include="fontComponent.h" />
     <ClInclude Include="gameSetting.h" />
     <ClInclude Include="gameState.h" />
+    <ClInclude Include="imgObject.h" />
+    <ClInclude Include="loadingLever.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="startUI.h" />
     <ClInclude Include="textObject.h" />
     <ClInclude Include="trackComponent.h" />
     <ClInclude Include="trackObject.h" />

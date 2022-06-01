@@ -92,6 +92,18 @@
     <ClCompile Include="timer.cpp">
       <Filter>源文件\CrossGame</Filter>
     </ClCompile>
+    <ClCompile Include="audioComponent.cpp">
+      <Filter>源文件\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="loadingLever.cpp">
+      <Filter>源文件\Lever</Filter>
+    </ClCompile>
+    <ClCompile Include="imgObject.cpp">
+      <Filter>源文件\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="startUI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="noteComponent.h">
@@ -150,6 +162,21 @@
     </ClInclude>
     <ClInclude Include="gameSetting.h">
       <Filter>头文件\CrossGame</Filter>
+    </ClInclude>
+    <ClInclude Include="audioComponent.h">
+      <Filter>头文件\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="loadingLever.h">
+      <Filter>头文件\Lever</Filter>
+    </ClInclude>
+    <ClInclude Include="imgObject.h">
+      <Filter>头文件\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="startUI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

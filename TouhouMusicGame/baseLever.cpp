@@ -6,7 +6,7 @@
 #include "timer.h"
 
 baseLever::baseLever(SDL_Renderer* renderer, SDL_Window* window)
-	:allSprite(), allGameObject(), renderer(renderer), window(window), Textures(), toLever(theGame::Quit), isRunning(true), pendingObjects(), isUpdate(false)
+	:allSprite(), allGameObject(), renderer(renderer), window(window), Textures(), toLever(theGame::Continue), isRunning(true), pendingObjects(), isUpdate(false), music(nullptr)
 {
 
 }
@@ -22,6 +22,8 @@ baseLever::~baseLever()
 		TTF_CloseFont(font);
 	Fonts.clear();
 	globalObject.clear();
+	if (music != nullptr)
+		Mix_FreeMusic(music);
 }
 
 
@@ -142,12 +144,23 @@ void baseLever::update()
 	// printf("fps:%lf\n", 1000 / timer::deltaTime);
 }
 
+void baseLever::globalEvent()
+{
+
+}
+
+void baseLever::resetLever()
+{
+	isRunning = true;
+}
+
 
 theGame::levers baseLever::running()
 {
 	while (isRunning)
 	{
 		event();
+		globalEvent();
 		update();
 		render();
 	}

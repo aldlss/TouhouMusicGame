@@ -17,7 +17,7 @@ public:
 	void Shutdown();
 	//  构造函数
 	theGame();
-	enum levers { Quit, PristineBeat };
+	enum levers { Quit, Continue, Start, PristineBeat, ThirdEye };
 private:
 	bool isRunning;
 	SDL_Renderer* renderer;

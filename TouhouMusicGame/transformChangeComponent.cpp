@@ -14,6 +14,9 @@ void transformChangeComponent::update()
 	velocity += acceleration * timer::deltaTime;
 	transform->increaseDeltaScale((scaleVelocity * 2 + scaleAcceleration) * timer::deltaTime / 2.0);//我谔谔啊，少加了一个上底
 	scaleVelocity += scaleAcceleration * timer::deltaTime;
-	transform->increaseDeltaPosition((rotationVelocity * 2 + rotationAcceleration) * timer::deltaTime / 2.0);
+	transform->increaseDeltaRotation((rotationVelocity * 2 + rotationAcceleration) * timer::deltaTime / 2.0);
 	rotationVelocity += rotationAcceleration * timer::deltaTime;
+	for (double& i : rotationVelocity)
+		if (i >= 360)
+			i -= 360;
 }

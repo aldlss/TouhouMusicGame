@@ -1,6 +1,6 @@
 ﻿#include "gameSetting.h"
 
-double gameSetting::noteSpeed = 10;
+double gameSetting::noteSpeed = 9;
 int gameSetting::width = 1280;
 int gameSetting::height = 720;
 int gameSetting::standardX = width / 2;
@@ -33,3 +33,6 @@ std::string gameSetting::badStr{ "BAD" };
 std::string gameSetting::greatStr{ "GREAT!" };
 std::string gameSetting::perfectStr{ "PERFECT!!" };
 std::string gameSetting::comboStr{ "Combo" };
+
+int gameSetting::musicVolume = 80;
+int gameSetting::chunkVolume = 80;

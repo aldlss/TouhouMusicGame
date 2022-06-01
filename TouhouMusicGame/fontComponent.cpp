@@ -33,7 +33,7 @@ void fontComponent::draw(SDL_Renderer* renderer)
 {
 	if (texture == nullptr && !str.empty())
 	{
-		auto surface = TTF_RenderText_Blended(font, str.c_str(), color);
+		auto surface = TTF_RenderUTF8_Blended(font, str.c_str(), color);
 		setTexture(SDL_CreateTextureFromSurface(renderer, surface));
 		SDL_FreeSurface(surface);
 	}
