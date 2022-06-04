@@ -6,7 +6,7 @@
 #include "someTools.h"
 #include "imgObject.h"
 
-roundLevel::roundLevel(SDL_Renderer* renderer, SDL_Window* window, std::ifstream& file, std::string musicRoute, std::string backgroundImgRoute)
+roundLevel::roundLevel(SDL_Renderer* renderer, SDL_Window* window, std::ifstream& file, std::string musicRoute, std::string backgroundImgRoute, std::mutex& rendererMutex)
 	:baseLever(renderer, window), musicNotationFile(file)
 {
 	/*std::string test{};
@@ -15,14 +15,24 @@ roundLevel::roundLevel(SDL_Renderer* renderer, SDL_Window* window, std::ifstream
 	你妈的，先偷一行走了，怪不得我说怎么读不到
 	*/
 
-	auto texture = IMG_LoadTexture(renderer, R"(F:\code\work\TouhouMusicGame\resources\img\round.png)");
+	SDL_Texture* texture = nullptr;
+	{
+		std::lock_guard<std::mutex>lock(rendererMutex);
+		texture = IMG_LoadTexture(renderer, R"(F:\code\work\TouhouMusicGame\resources\img\round.png)");
+	}
 	if (texture != nullptr)Textures.emplace("Round", texture);
 	else printf("READ IMG ERROR : %s\n", SDL_GetError());
-	texture = IMG_LoadTexture(renderer, R"(F:\code\work\TouhouMusicGame\resources\img\roundTrack.png)");
+	{
+		std::lock_guard<std::mutex>lock(rendererMutex);
+		texture = IMG_LoadTexture(renderer, R"(F:\code\work\TouhouMusicGame\resources\img\roundTrack.png)");
+	}
 	if (texture != nullptr)Textures.emplace("roundTrack", texture);
 	else printf("READ IMG ERROR : %s\n", SDL_GetError());
 	texture = nullptr;
-	texture = IMG_LoadTexture(renderer, backgroundImgRoute.c_str());
+	{
+		std::lock_guard<std::mutex>lock(rendererMutex);
+		texture = IMG_LoadTexture(renderer, backgroundImgRoute.c_str());
+	}
 	if (texture != nullptr)
 	{
 		Textures.emplace("background", texture);
@@ -36,9 +46,11 @@ roundLevel::roundLevel(SDL_Renderer* renderer, SDL_Window* window, std::ifstream
 	gameSetting::standardX = gameSetting::width / 2;
 	gameSetting::setOriginalTargetScale(3, 3, 0.5, 0.5);
 	gameState::Initialize();
+
 	TTF_Font* font = TTF_OpenFont(R"(F:\code\work\TouhouMusicGame\resources\ttf\MerriweatherSans-VariableFont_wght.ttf)", 64);
 	Fonts.emplace("MerriweatherSans", font);
 	TTF_SetFontStyle(font, TTF_STYLE_ITALIC);
+
 	auto text = new textObject(this, font, nullptr, gameSetting::width >> 1, (gameSetting::height >> 2) * 3, 0, 120);
 	globalObject.emplace("judgeText", text);
 	text = new textObject(this, font, nullptr, (gameSetting::width >> 2) * 3, gameSetting::height / 3, 0, 120);

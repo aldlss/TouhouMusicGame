@@ -68,11 +68,12 @@ void theGame::Loop()
 	loadingLever* loadLever = new loadingLever(renderer, window);
 	levers toLever = Start;
 	baseLever* lever = nullptr;
-	auto newRoundLeverFunc = [&lever, this](std::string musicRoute, std::string backgroundImgRoute)
+	std::mutex rendererMutex;
+	auto newRoundLeverFunc = [&lever, &rendererMutex, this](std::string musicRoute, std::string backgroundImgRoute)
 	{
 		delete lever;
 		lever = nullptr;
-		lever = new roundLevel(renderer, window, fileReader, musicRoute, backgroundImgRoute);
+		lever = new roundLevel(renderer, window, fileReader, musicRoute, backgroundImgRoute, rendererMutex);
 	};
 	while (isRunning)
 	{
@@ -106,9 +107,10 @@ void theGame::Loop()
 		default:
 			break;
 		}
-		while (asyncResult.wait_for(std::chrono::microseconds(8)) == std::future_status::timeout)//这里设为0的话有很大概率会开启的时候卡死，估计是0太快了（，然而似乎不设置也会，一定是异步问题
+		while (asyncResult.wait_for(std::chrono::microseconds(6)) == std::future_status::timeout)
 		{
 			loadLever->resetLever();
+			std::lock_guard<std::mutex> lock(rendererMutex);
 			toLever = loadLever->running();
 			if (toLever == Quit)
 				goto end;//已知问题：由于异步，跳出的时候会等待asyncResult析构，所以会等其加载完之后才关闭

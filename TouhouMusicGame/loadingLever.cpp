@@ -23,11 +23,6 @@ loadingLever::loadingLever(SDL_Renderer* renderer, SDL_Window* window)
 	loadText->getComponent<fontComponent>()->serColor({ 224,137,24,255 });//我想的是枫叶般的颜色，但我觉得很明显不像（
 	loadText->getComponent<fontComponent>()->setString(someTools::u8ToChar(u8"少女祈祷中"));
 	globalObject.emplace("loadText", loadText);
-
-	loadText = new textObject(this, font, nullptr, gameSetting::width >> 1, gameSetting::height / 4 * 3, 0, 50);
-	loadText->getComponent<fontComponent>()->serColor({ 224,137,24,255 });
-	loadText->getComponent<fontComponent>()->setString(someTools::u8ToChar(u8"游戏已卡死，请重启"));
-	globalObject.emplace("123Text", loadText);
 }
 
 void loadingLever::globalEvent()
