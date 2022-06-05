@@ -18,13 +18,13 @@ roundLevel::roundLevel(SDL_Renderer* renderer, SDL_Window* window, std::ifstream
 	SDL_Texture* texture = nullptr;
 	{
 		std::lock_guard<std::mutex>lock(rendererMutex);
-		texture = IMG_LoadTexture(renderer, R"(F:\code\work\TouhouMusicGame\resources\img\round.png)");
+		texture = IMG_LoadTexture(renderer, R"(resources\img\round.png)");
 	}
 	if (texture != nullptr)Textures.emplace("Round", texture);
 	else printf("READ IMG ERROR : %s\n", SDL_GetError());
 	{
 		std::lock_guard<std::mutex>lock(rendererMutex);
-		texture = IMG_LoadTexture(renderer, R"(F:\code\work\TouhouMusicGame\resources\img\roundTrack.png)");
+		texture = IMG_LoadTexture(renderer, R"(resources\img\roundTrack.png)");
 	}
 	if (texture != nullptr)Textures.emplace("roundTrack", texture);
 	else printf("READ IMG ERROR : %s\n", SDL_GetError());
@@ -47,7 +47,7 @@ roundLevel::roundLevel(SDL_Renderer* renderer, SDL_Window* window, std::ifstream
 	gameSetting::setOriginalTargetScale(3, 3, 0.5, 0.5);
 	gameState::Initialize();
 
-	TTF_Font* font = TTF_OpenFont(R"(F:\code\work\TouhouMusicGame\resources\ttf\MerriweatherSans-VariableFont_wght.ttf)", 64);
+	TTF_Font* font = TTF_OpenFont(R"(resources\ttf\MerriweatherSans-VariableFont_wght.ttf)", 64);
 	Fonts.emplace("MerriweatherSans", font);
 	TTF_SetFontStyle(font, TTF_STYLE_ITALIC);
 

@@ -35,7 +35,7 @@ theGame::levers startUI::run()
 			static int counter = 0;
 
 			ImGui::Begin("touhou", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoBackground);
-			// ImGui::SetWindowSize({ 1280,720 });
+			ImGui::SetWindowSize({ 1280,720 });
 			ImGui::SetWindowPos({ 0,0 });
 			someTools::imguiTextCentered(someTools::u8ToChar(u8"车万音游"));
 			ImGui::SetCursorPosY(150);
@@ -54,7 +54,7 @@ theGame::levers startUI::run()
 			someTools::imguiTextCentered(someTools::u8ToChar(u8"黄圈与红圈重合时敲击空格，跟着音乐走，会好很多的~"));
 			ImGui::EndGroup();
 
-			ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+			//ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 			ImGui::End();
 
 		}

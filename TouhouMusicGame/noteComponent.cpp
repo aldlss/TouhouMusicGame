@@ -15,27 +15,27 @@ noteComponent::~noteComponent()
 	switch (nowNoteState)
 	{
 	case Miss:
-		puts("MISS");
+		// puts("MISS");
 		font->setString(gameSetting::missStr);
 		font->serColor(gameSetting::missColor);
 		break;
 	case Bad:
-		puts("BAD");
+		// puts("BAD");
 		font->setString(gameSetting::badStr);
 		font->serColor(gameSetting::badColor);
 		break;
 	case Good:
-		puts("GOOD!");
+		// puts("GOOD!");
 		font->setString(gameSetting::greatStr);
 		font->serColor(gameSetting::greatColor);
 		break;
 	case Perfect:
-		puts("PERFECT!!");
+		// puts("PERFECT!!");
 		font->setString(gameSetting::perfectStr);
 		font->serColor(gameSetting::perfectColor);
 		break;
 	case Active:
-		puts("WHAT THE?");
+		// puts("WHAT THE?");
 		break;
 	}
 	font = owner->getGame()->getGlobalObject("comboText")->getComponent<fontComponent>();

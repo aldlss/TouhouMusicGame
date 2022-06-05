@@ -34,7 +34,7 @@ bool theGame::Initialize()
 		printf("fail to TTF_Init : %s\n", SDL_GetError());
 		return false;
 	}
-	window = SDL_CreateWindow(someTools::u8ToChar(u8"Test测试"), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, 0);
+	window = SDL_CreateWindow(someTools::u8ToChar(u8"TouhouMusicGame"), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, 0);
 	if (window == nullptr)
 	{
 		printf("fail to CreateWindow : %s\n", SDL_GetError());
@@ -58,7 +58,7 @@ bool theGame::Initialize()
 	ImGui_ImplSDL2_InitForSDLRenderer(window, renderer);
 	ImGui_ImplSDLRenderer_Init(renderer);
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
-	io.Fonts->AddFontFromFileTTF(R"(F:\code\work\TouhouMusicGame\resources\ttf\NotoSansSC-Regular.otf)", 32, nullptr, io.Fonts->GetGlyphRangesChineseFull());
+	io.Fonts->AddFontFromFileTTF(R"(resources\ttf\NotoSansSC-Regular.otf)", 32, nullptr, io.Fonts->GetGlyphRangesChineseFull());
 
 	return true;
 }
@@ -93,15 +93,15 @@ void theGame::Loop()
 		}
 		case PristineBeat:
 			asyncResult = std::async(std::launch::async, [&lever, this, &newRoundLeverFunc]() {
-				fileReader.open(R"(F:\code\work\TouhouMusicGame\resources\musicNotationFile\PristineBeat.txt)", std::ios::in);
-				newRoundLeverFunc(someTools::u8ToChar(u8R"(F:\code\work\TouhouMusicGame\resources\music\始原のビート ～ Pristine Beat.flac)"), {});
+				fileReader.open(R"(resources\musicNotationFile\PristineBeat.txt)", std::ios::in);
+				newRoundLeverFunc(someTools::u8ToChar(u8R"(resources\music\始原のビート ～ Pristine Beat.flac)"), {});
 				});
 			break;
 		case ThirdEye:
 			asyncResult = std::async(std::launch::async, [&lever, this, &newRoundLeverFunc]() {
-				fileReader.open(R"(F:\code\work\TouhouMusicGame\resources\musicNotationFile\ZUN - Satori Maiden ~ 3rd eye (Dai) [suko's Normal].txt)", std::ios::in);
-				newRoundLeverFunc(someTools::u8ToChar(u8R"(F:\code\work\TouhouMusicGame\resources\music\Satori Maiden ~ 3rd eye.mp3)"),
-					someTools::u8ToChar(u8R"(F:\code\work\TouhouMusicGame\resources\img\satori(CUnet)(noise_scale)(Level2)(tta)(1280x720).png)"));
+				fileReader.open(R"(resources\musicNotationFile\ZUN - Satori Maiden ~ 3rd eye (Dai) [suko's Normal].txt)", std::ios::in);
+				newRoundLeverFunc(someTools::u8ToChar(u8R"(resources\music\Satori Maiden ~ 3rd eye.mp3)"),
+					someTools::u8ToChar(u8R"(resources\img\satori(CUnet)(noise_scale)(Level2)(tta)(1280x720).png)"));
 				});
 			break;
 		default:

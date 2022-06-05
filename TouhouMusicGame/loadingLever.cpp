@@ -6,11 +6,11 @@
 loadingLever::loadingLever(SDL_Renderer* renderer, SDL_Window* window)
 	:baseLever(renderer, window), count(0)
 {
-	TTF_Font* font = TTF_OpenFont(R"(F:\code\work\TouhouMusicGame\resources\ttf\MaShanZheng-Regular.ttf)", 64);
+	TTF_Font* font = TTF_OpenFont(R"(resources\ttf\MaShanZheng-Regular.ttf)", 64);
 	// TTF_SetFontStyle(font, TTF_STYLE_ITALIC);
 	Fonts.emplace("MaShanZheng", font);
 
-	auto loadImg = IMG_LoadTexture(renderer, R"(F:\code\work\TouhouMusicGame\resources\img\loading.png)");
+	auto loadImg = IMG_LoadTexture(renderer, R"(resources\img\loading.png)");
 	Textures.emplace("loadImg", loadImg);
 	auto loading = new imgObject(this);
 	loading->getComponent<spriteComponent>()->setTexture(loadImg);
