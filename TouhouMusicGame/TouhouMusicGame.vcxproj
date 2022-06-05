@@ -174,7 +174,6 @@
     <ClInclude Include="gameState.h" />
     <ClInclude Include="imgObject.h" />
     <ClInclude Include="loadingLever.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="startUI.h" />
     <ClInclude Include="textObject.h" />
     <ClInclude Include="trackComponent.h" />
